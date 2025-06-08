@@ -15,7 +15,9 @@ class loginPage{
 
     }
     isLogoutElementVisible(){
-        this.elements.logoutBtn().should('be.visible')
+        this.elements.logoutBtn()
+        .should('be.visible')
+        
     }
     getErrorMessage(){
         return this.elements.errorMessage()

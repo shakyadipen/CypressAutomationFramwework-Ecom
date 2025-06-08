@@ -41,7 +41,9 @@ describe("user should successfully Login and Logout With Valid Credentials",()=>
             cy.get('@data').then(data=>{
                 cy.login(data.email,"WrongPassword")
                 //homeObj.clickLogout()
-                loginObj.getErrorMessage().should('be.visible').contains("Your email or password is incorrect!")
+                loginObj.getErrorMessage().should('be.visible')
+                .and("contain","Your email or password is incorrect!")
+               // contains("Your email or password is incorrect!")
                 })
         }
         cy.get('@data').then(data=>{
